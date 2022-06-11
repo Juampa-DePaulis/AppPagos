@@ -21,16 +21,26 @@
                 <div class=" col-3 text-center border border-info m-3 p-5">
                     <input id="nombre" type="text" class="form-control" placeholder="Nombre" />
                 </div>
+
                 <div class=" col-3 text-center border border-info m-3 p-5">
                     <input id="pago" type="number" class="form-control" placeholder="Cuánto Gastó" />
                 </div>
+
                 <div class="col-3 align-self-end m-3 p-5">
                     <div>
-                        <button type="button" class="btn btn-dark" onclick="agregar()"> Agregar </button>
+                        <button type="button" class="btn btn-dark" onclick="agregar()">
+                            Agregar
+                        </button>
                     </div>
                 </div>
             </div>
         </form>
+
+        <ul class="list-group" id="lista">
+
+        </ul>
+        <div id="total" type="text">
+        </div>
     </div>
 
     <script>

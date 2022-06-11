@@ -1,6 +1,6 @@
 const pagos = [];
-const usuarios = [];
-const listado = document.getElementById("list-group");
+const personas = [];
+const listado = document.getElementById("lista");
 const cuadroResultado = document.getElementById("total");
 const usuario = document.getElementById("nombre");
 const pago = document.getElementById("pago");
@@ -11,4 +11,17 @@ function agregar() {
   mostrarPagoIndvidualEnHTML();
 }
 
-function agregarGastosAListas() {}
+function agregarGastosAListas() {
+  personas.push(usuario.value);
+  pagos.push(parseInt(pago.value));
+}
+
+function ultimoAPantalla() {
+  const li = document.createElement("li");
+  const texto = document.createTextNode(`${usuario.value} pagó: ${pago.value}`);
+  li.classList.add("list-group-item");
+  li.appendChild(texto);
+  listado.appendChild(li);
+}
+
+function mostrarPagoIndvidualEnHTML() {}
