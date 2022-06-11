@@ -18,10 +18,30 @@ function agregarGastosAListas() {
 
 function ultimoAPantalla() {
   const li = document.createElement("li");
-  const texto = document.createTextNode(`${usuario.value} pagó: ${pago.value}`);
+  const text = document.createTextNode(
+    `${usuario.value} pagó: ${pago.value} pesos.`
+  );
   li.classList.add("list-group-item");
-  li.appendChild(texto);
+  li.appendChild(text);
   listado.appendChild(li);
 }
 
-function mostrarPagoIndvidualEnHTML() {}
+function totalDinero(pagos) {
+  let suma = 0;
+  for (let pago of pagos) {
+    suma += pago;
+  }
+  return suma;
+}
+
+function mostrarPagoIndvidualEnHTML() {
+  const Total = totalDinero(pagos);
+  let CadaUno = Total / personas.length;
+  /*const parrafo = document.createElement("p");
+  const leyenda = document.createTextNode(
+    `Total : ${Total} A cada uno le toca pagar ${CadaUno}`
+  );
+  parrafo.appendChild(leyenda);
+  cuadroResultado.appendChild(parrafo);*/
+  cuadroResultado.innerText = `Total : ${Total} A cada uno le toca pagar ${CadaUno}`;
+}
